@@ -102,7 +102,7 @@ public class JobData {
                 String fieldValue = field.getValue();
                 // HashMap<String, String> jobCopy = new HashMap<>();
 
-                if (fieldValue.contains(value)) {
+                if (fieldValue.toLowerCase().contains(value.toLowerCase())) {
                     jobs.add(job);
                     break;
                 }
