@@ -122,19 +122,22 @@ public class TechJobs {
         // Create variable for used of repeated string in output
         String asteriskLine = "*****";
 
-        // First for-each loop iterates through the ArrayList of HashMap objects (someJobs) and wraps the asteriskLine variable around each object in the collection
-        // Second for-each loop, nested in the first, iterates through each HashMap object and prints each key-value pair
-        for (HashMap<String, String> job : someJobs) {
-            System.out.println("\n" + asteriskLine);
-            for (Map.Entry<String, String> field : job.entrySet()) {
-                String key = field.getKey();
-                String value = field.getValue();
-                System.out.println(key + ": " + value);
+        if(!someJobs.isEmpty()) {
+            // If someJobs is NOT empty...
+            // First for-each loop iterates through the ArrayList of HashMap objects (someJobs) and wraps the asteriskLine variable around each object in the collection
+            // Second for-each loop, nested in the first, iterates through each HashMap object and prints each key-value pair
+            for (HashMap<String, String> job : someJobs) {
+                System.out.println("\n" + asteriskLine);
+                for (Map.Entry<String, String> field : job.entrySet()) {
+                    String key = field.getKey();
+                    String value = field.getValue();
+                    System.out.println(key + ": " + value);
+                }
+                System.out.println(asteriskLine);
             }
-            System.out.println(asteriskLine);
+        } else {
+            // If someJobs IS empty...
+            System.out.print("No Results");
         }
-
-
-//        System.out.println("printJobs is not implemented yet " + asteriskLine);
     }
 }
