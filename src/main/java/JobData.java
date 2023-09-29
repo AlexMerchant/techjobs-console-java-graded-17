@@ -94,12 +94,9 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> job : allJobs) {
-            boolean valueMatched = false;
 
             for (Map.Entry<String, String> field : job.entrySet()) {
-                // String key = field.getKey();
                 String fieldValue = field.getValue();
-                // HashMap<String, String> jobCopy = new HashMap<>();
 
                 if (fieldValue.toLowerCase().contains(value.toLowerCase())) {
                     jobs.add(job);
